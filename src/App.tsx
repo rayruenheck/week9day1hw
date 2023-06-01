@@ -1,5 +1,8 @@
 import Header from "./components/Header"
-import PokeInfos from "./pages/PokeInfos"
+
+import PokemonPage from "./pages/PokemonPage"
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+// import PokeInfos from "./pages/PokeInfos"
 
 function App() {
 
@@ -7,7 +10,11 @@ function App() {
   return (
     <>
     <Header />
-    <PokeInfos />
+    <BrowserRouter>
+    <Routes>
+    <Route path='/Pokemon/:pokemonName' element={<PokemonPage />} />
+    </Routes>
+    </BrowserRouter>
     </>
   )
 }
